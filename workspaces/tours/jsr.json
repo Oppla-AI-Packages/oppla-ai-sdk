@@ -1,0 +1,8 @@
+{
+  "name": "@oppla-ai/tours",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/index.ts",
+    "./core": "./src/core/index.ts"
+  }
+}
