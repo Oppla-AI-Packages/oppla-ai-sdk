@@ -10,6 +10,7 @@ export {
   updateTooltip,
   renderBannerElement,
   renderFeedbackElement,
+  renderAnnouncementSliderElement,
 } from "./render";
 
 export * from "./public-methods";
@@ -27,6 +28,7 @@ export type {
   FlowModalStep,
   FlowFeedbackStep,
   FlowBannerStep,
+  FlowAnnouncementListStep,
   FlowWaitStep,
   WaitStepOptions,
 } from "../types";

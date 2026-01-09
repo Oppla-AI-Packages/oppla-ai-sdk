@@ -361,6 +361,77 @@ export interface FlowBannerStep extends CommonStepProps {
   wait?: WaitStepOptions | WaitStepOptions[];
 }
 
+export interface FlowAnnouncementListStep extends CommonStepProps {
+  type: "announcement-list";
+  /**
+   * Organization ID for fetching announcements.
+   * This is required as announcements are scoped to organizations.
+   */
+  organizationId: string;
+  /**
+   * API URL for fetching announcements.
+   * @defaultValue Uses the default backend API URL
+   */
+  apiUrl?: string;
+  /**
+   * Title of the announcement slider header.
+   * @defaultValue `What's New`
+   */
+  title?: string;
+  /**
+   * Subtitle displayed below the title.
+   */
+  subtitle?: string;
+  /**
+   * Position of the slider.
+   * @defaultValue `right`
+   */
+  sliderPosition?: "left" | "right";
+  /**
+   * Width of the slider panel.
+   * @defaultValue `400px`
+   */
+  sliderWidth?: string;
+  /**
+   * Maximum number of announcements to show initially.
+   * @defaultValue `10`
+   */
+  initialLimit?: number;
+  /**
+   * Enable infinite scroll pagination.
+   * @defaultValue `true`
+   */
+  enablePagination?: boolean;
+  /**
+   * Message to show when there are no announcements.
+   * @defaultValue `No announcements available.`
+   */
+  emptyStateMessage?: string;
+  /**
+   * Hides the overlay backdrop.
+   * @defaultValue `false`
+   */
+  hideOverlay?: boolean;
+  /**
+   * Cancel the flow when the overlay is clicked.
+   * @defaultValue `true`
+   */
+  closeOnOverlayClick?: boolean;
+  /**
+   * Hide the close button.
+   * @defaultValue `false`
+   */
+  hideClose?: boolean;
+  /**
+   * `z-index` of the slider.
+   */
+  zIndex?: string;
+  /**
+   * Wait for an event to occur before continuing to the next step.
+   */
+  wait?: WaitStepOptions | WaitStepOptions[];
+}
+
 export interface WaitStepOptions {
   /**
    * Wait for an element to appear in the DOM.
@@ -430,7 +501,7 @@ export interface FlowWaitStep extends CommonStepProps {
   wait: WaitStepOptions | WaitStepOptions[];
 }
 
-export type FlowStep = FlowModalStep | FlowTooltipStep | FlowBannerStep | FlowWaitStep | FlowFeedbackStep;
+export type FlowStep = FlowModalStep | FlowTooltipStep | FlowBannerStep | FlowWaitStep | FlowFeedbackStep | FlowAnnouncementListStep;
 
 type Step = FlowStep | FlowStep[][];
 

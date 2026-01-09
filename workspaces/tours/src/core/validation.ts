@@ -32,6 +32,7 @@ import type {
   FooterActionItem,
   SeenFlow,
   FlowBannerStep,
+  FlowAnnouncementListStep,
 } from "../types";
 
 const WaitOptionsStruct: Describe<WaitStepOptions> = object({
@@ -153,7 +154,26 @@ const WaitStepStruct: Describe<FlowWaitStep> = object({
   >,
 });
 
-const StepStruct = union([TooltipStepStruct, ModalStepStruct, BannerStepStruct, WaitStepStruct]);
+const AnnouncementListStepStruct: Describe<FlowAnnouncementListStep> = object({
+  type: literal("announcement-list"),
+  organizationId: string(),
+  apiUrl: optional(string()),
+  title: optional(string()),
+  subtitle: optional(string()),
+  sliderPosition: optional(enums(["left", "right"])),
+  sliderWidth: optional(string()),
+  initialLimit: optional(number()),
+  enablePagination: optional(boolean()),
+  emptyStateMessage: optional(string()),
+  hideOverlay: optional(boolean()),
+  closeOnOverlayClick: optional(boolean()),
+  hideClose: optional(boolean()),
+  zIndex: optional(string()),
+  stepId: optional(string()),
+  wait: optional(union([WaitOptionsStruct, array(WaitOptionsStruct)])),
+});
+
+const StepStruct = union([TooltipStepStruct, ModalStepStruct, BannerStepStruct, WaitStepStruct, AnnouncementListStepStruct]);
 
 const FlowStepsStruct = array(union([StepStruct, array(array(StepStruct))]));
 

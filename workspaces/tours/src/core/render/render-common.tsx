@@ -1,4 +1,4 @@
-import type { FlowBannerStep, FlowFeedbackStep, FlowModalStep, FlowTooltipStep, FooterActionItem } from "../../types";
+import type { FlowAnnouncementListStep, FlowBannerStep, FlowFeedbackStep, FlowModalStep, FlowTooltipStep, FooterActionItem } from "../../types";
 import { isBannerStep, isFeedbackStep, isModalStep, isTooltipStep } from "../../lib/step-type";
 
 export const getStepHeader = ({ step }: { step: FlowTooltipStep | FlowModalStep | FlowFeedbackStep }): HTMLElement => (
@@ -142,7 +142,7 @@ export const createRoot = ({
   step,
 }: {
   boundaryEl?: Element;
-  step?: FlowTooltipStep | FlowModalStep | FlowBannerStep | FlowFeedbackStep;
+  step?: FlowTooltipStep | FlowModalStep | FlowBannerStep | FlowFeedbackStep | FlowAnnouncementListStep;
 } = {}): HTMLElement => {
   const root = <div className="flows-root" />;
   root.style.pointerEvents = "auto";
