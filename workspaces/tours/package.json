@@ -24,7 +24,7 @@
     "product-adoption",
     "product-tours"
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Oppla-AI-Packages/oppla-ai-sdk.git"
@@ -48,7 +48,7 @@
     },
     "./flows.css": "./css.min/flows.css",
     "./vars.css": "./css.min/vars.css",
-    "./template.css": "./css/min/template.css"
+    "./template.css": "./css.min/template.css"
   },
   "scripts": {
     "dev": "tsup --watch --env.NODE_ENV development",

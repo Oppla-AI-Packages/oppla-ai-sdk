@@ -13,7 +13,7 @@ export function createParams(params?: Params): string {
   return `?${paramsString}`;
 }
 
-export const getApiUrl = (): string => "https://api-cloud.oppla.ai";
+export const getApiUrl = (): string => "https://api-cloud.imloop.ai";
 
 const f = <T>(
   url: string,
